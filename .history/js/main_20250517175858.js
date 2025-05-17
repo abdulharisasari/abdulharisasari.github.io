@@ -295,30 +295,6 @@
 
     }; // end ssMoveTo
 
-    const ssFilterTabs = function () {
-        const tabs = document.querySelectorAll('.tab-btn');
-        const entries = document.querySelectorAll('.folio-entry');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove('active'));
-                // Add active class to clicked tab
-                tab.classList.add('active');
-
-                const filter = tab.getAttribute('data-filter');
-
-                entries.forEach(entry => {
-                    if (filter === 'all' || entry.getAttribute('data-category') === filter) {
-                        entry.style.display = 'block';
-                    } else {
-                        entry.style.display = 'none';
-                    }
-                });
-            });
-        });
-      };
-
 
    /* Initialize
     * ------------------------------------------------------ */
@@ -332,7 +308,6 @@
         ssSwiper();
         ssAlertBoxes();
         ssMoveTo();
-        ssFilterTabs();
 
     })();
 

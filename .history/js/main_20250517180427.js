@@ -332,7 +332,7 @@
         ssSwiper();
         ssAlertBoxes();
         ssMoveTo();
-        ssFilterTabs();
+         ssFilterTabs();
 
     })();
 
