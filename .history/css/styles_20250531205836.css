@@ -4041,8 +4041,8 @@ td:last-child {
 /* === Portfolio Grid === */
 .folio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
     padding: 10px 140px 100px 140px;
     transition: padding 0.3s ease;
 }
