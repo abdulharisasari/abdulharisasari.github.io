@@ -318,6 +318,31 @@
             });
         });
       };
+      
+   const ssPortfolioModal = function () {
+    const modal = document.getElementById("folioModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const closeBtn = document.querySelector(".close");
+
+    if (!(modal && modalImg && modalTitle && modalDesc && closeBtn)) return;
+
+    document.querySelectorAll(".folio-entry").forEach(entry => {
+        entry.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = entry.getAttribute("data-img");
+            modalTitle.textContent = entry.getAttribute("data-title");
+            modalDesc.textContent = entry.getAttribute("data-desc"); // ← deskripsi masuk ke sini
+        });
+    });
+
+    closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+    window.addEventListener("click", e => {
+        if (e.target === modal) modal.style.display = "none";
+    });
+};
 
 
    /* Initialize
@@ -333,7 +358,7 @@
         ssAlertBoxes();
         ssMoveTo();
         ssFilterTabs();
-
+        ssPortfolioModal();
     })();
 
 })(document.documentElement);
