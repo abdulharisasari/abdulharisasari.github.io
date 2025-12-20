@@ -234,7 +234,7 @@
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
 
-        const pxShow = 200;
+        const pxShow = 900;
         const goTopButton = document.querySelector(".ss-go-top");
 
         if (!goTopButton) return;
@@ -375,8 +375,8 @@ const ssPortfolioModal = function () {
 
             entry.classList.add("selected");
 
-            modalTitle.textContent = entry.dataset.title || "";
-            modalDesc.textContent = entry.dataset.desc || "";
+            modalTitle.textContent = entry.dataset.title;
+            modalDesc.textContent = entry.dataset.desc;
 
             /* TECH STACK */
             modalTech.innerHTML = "";
@@ -393,10 +393,10 @@ const ssPortfolioModal = function () {
 
             if (entry.dataset.playstore) {
                 modalStore.innerHTML += `
-                    <a href="${entry.dataset.playstore}"
-                       target="_blank"
+                    <a href="${entry.dataset.playstore}" 
+                       target="_blank" 
                        class="store-badge">
-                        <img src="images/icons/icon-playstore.png"
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                              alt="Get it on Google Play">
                     </a>
                 `;
@@ -404,10 +404,10 @@ const ssPortfolioModal = function () {
 
             if (entry.dataset.appstore) {
                 modalStore.innerHTML += `
-                    <a href="${entry.dataset.appstore}"
-                       target="_blank"
+                    <a href="${entry.dataset.appstore}" 
+                       target="_blank" 
                        class="store-badge">
-                        <img src="images/icons/icon-appstore.png"
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                              alt="Download on the App Store">
                     </a>
                 `;
@@ -424,11 +424,9 @@ const ssPortfolioModal = function () {
     });
 };
 
-
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
-        ssBackToTop();
 
         ssPreloader();
         ssMoveHeader();

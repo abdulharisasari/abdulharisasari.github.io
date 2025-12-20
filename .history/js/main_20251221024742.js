@@ -234,7 +234,7 @@
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
 
-        const pxShow = 200;
+        const pxShow = 900;
         const goTopButton = document.querySelector(".ss-go-top");
 
         if (!goTopButton) return;
@@ -428,7 +428,6 @@ const ssPortfolioModal = function () {
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
-        ssBackToTop();
 
         ssPreloader();
         ssMoveHeader();

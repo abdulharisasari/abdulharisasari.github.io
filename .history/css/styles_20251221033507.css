@@ -3147,7 +3147,6 @@ td:last-child {
     margin-left: var(--vspace-1);
 }
 
-
 .s-header__menu-links {
     list-style: none;
     display: inline-flex;
@@ -4352,7 +4351,7 @@ td:last-child {
  * responsive:
  * works
  * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .folio-entries .entry__cat {
         font-size: calc(var(--text-size) * 0.7);
     }

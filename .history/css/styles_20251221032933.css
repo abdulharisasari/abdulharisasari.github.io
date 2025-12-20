@@ -3147,7 +3147,6 @@ td:last-child {
     margin-left: var(--vspace-1);
 }
 
-
 .s-header__menu-links {
     list-style: none;
     display: inline-flex;
@@ -4582,7 +4581,7 @@ td:last-child {
     width: 44px;
     height: 44px;
     background: #000;
-    color: #f90000;
+    color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4609,11 +4608,6 @@ td:last-child {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-}
-
-
-.ss-go-top:hover {
-    background: #ff6a00;
 }
 .ss-go-top a {
     display: flex;

@@ -428,7 +428,6 @@ const ssPortfolioModal = function () {
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
-        ssBackToTop();
 
         ssPreloader();
         ssMoveHeader();
@@ -441,6 +440,7 @@ const ssPortfolioModal = function () {
         ssFilterTabs();
         ssPortfolioModal();
         ssRotatingRole();
+        ssBackToTop();
     })();
 
 })(document.documentElement);

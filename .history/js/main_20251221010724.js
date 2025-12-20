@@ -234,7 +234,7 @@
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
 
-        const pxShow = 200;
+        const pxShow = 900;
         const goTopButton = document.querySelector(".ss-go-top");
 
         if (!goTopButton) return;
@@ -356,7 +356,48 @@
             });
         });
       };
-   
+      
+//    const ssPortfolioModal = function () {
+//     const modal = document.getElementById("folioModal");
+//     const modalTitle = document.getElementById("modalTitle");
+//     const modalDesc = document.getElementById("modalDesc");
+//     const modalTech = document.getElementById("modalTech");
+//     const closeBtn = document.querySelector(".close");
+
+//     if (!(modal && modalTitle && modalDesc && modalTech && closeBtn)) return;
+
+//     document.querySelectorAll(".folio-entry").forEach(entry => {
+//         entry.addEventListener("click", () => {
+
+//             // remove selected sebelumnya
+//             document.querySelectorAll(".folio-entry")
+//                 .forEach(el => el.classList.remove("selected"));
+
+//             entry.classList.add("selected");
+
+//             modalTitle.textContent = entry.dataset.title;
+//             modalDesc.textContent = entry.dataset.desc;
+
+//             // tech stack
+//             modalTech.innerHTML = "";
+//             if (entry.dataset.tech) {
+//                 entry.dataset.tech.split("·").forEach(t => {
+//                     const span = document.createElement("span");
+//                     span.textContent = t.trim();
+//                     modalTech.appendChild(span);
+//                 });
+//             }
+
+//             modal.style.display = "block";
+//         });
+//     });
+
+//     closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+//     window.addEventListener("click", e => {
+//         if (e.target === modal) modal.style.display = "none";
+//     });
+// };
 const ssPortfolioModal = function () {
     const modal = document.getElementById("folioModal");
     const modalTitle = document.getElementById("modalTitle");
@@ -375,8 +416,8 @@ const ssPortfolioModal = function () {
 
             entry.classList.add("selected");
 
-            modalTitle.textContent = entry.dataset.title || "";
-            modalDesc.textContent = entry.dataset.desc || "";
+            modalTitle.textContent = entry.dataset.title;
+            modalDesc.textContent = entry.dataset.desc;
 
             /* TECH STACK */
             modalTech.innerHTML = "";
@@ -388,27 +429,15 @@ const ssPortfolioModal = function () {
                 });
             }
 
-            /* STORE BADGES */
+            /* PLAY STORE (DI BAWAH TECH) */
             modalStore.innerHTML = "";
-
             if (entry.dataset.playstore) {
-                modalStore.innerHTML += `
-                    <a href="${entry.dataset.playstore}"
-                       target="_blank"
-                       class="store-badge">
-                        <img src="images/icons/icon-playstore.png"
+                modalStore.innerHTML = `
+                    <a href="${entry.dataset.playstore}" 
+                       target="_blank" 
+                       class="playstore-badge">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                              alt="Get it on Google Play">
-                    </a>
-                `;
-            }
-
-            if (entry.dataset.appstore) {
-                modalStore.innerHTML += `
-                    <a href="${entry.dataset.appstore}"
-                       target="_blank"
-                       class="store-badge">
-                        <img src="images/icons/icon-appstore.png"
-                             alt="Download on the App Store">
                     </a>
                 `;
             }
@@ -425,10 +454,10 @@ const ssPortfolioModal = function () {
 };
 
 
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
-        ssBackToTop();
 
         ssPreloader();
         ssMoveHeader();

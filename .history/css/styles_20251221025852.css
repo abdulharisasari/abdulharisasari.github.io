@@ -3147,7 +3147,6 @@ td:last-child {
     margin-left: var(--vspace-1);
 }
 
-
 .s-header__menu-links {
     list-style: none;
     display: inline-flex;
@@ -4119,13 +4118,11 @@ td:last-child {
 
 
 .store-badge {
-    height: 28px;
+    height: 28px;          /* mendekati tinggi span */
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-top: 18px; /* ⬅️ TURUN DI SINI */
 }
-
 
 .store-badge img {
     height: 100%;
@@ -4174,6 +4171,7 @@ td:last-child {
 
 
 .playstore-badge img {
+
     height: 35px;
     width: auto;
 }
@@ -4563,7 +4561,7 @@ td:last-child {
 /* ------------------------------------------------------------------- 
  * ## go top
  * ------------------------------------------------------------------- */
-/* .ss-go-top {
+.ss-go-top {
     --width-label: 11rem;
     z-index: 2;
     display: flex;
@@ -4573,25 +4571,6 @@ td:last-child {
     right: calc(var(--gutter) + var(--vspace-0_75) - var(--width-label) - var(--vspace-1_75) - var(--vspace-0_75));
     transform: rotate(-90deg);
     transform-origin: left bottom;
-} */
-
-.ss-go-top {
-    position: fixed;
-    right: 28px;
-    bottom: 28px;
-    width: 44px;
-    height: 44px;
-    background: #000;
-    color: #f90000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 999;
 }
 
 .ss-go-top span {
@@ -4605,16 +4584,6 @@ td:last-child {
     position: relative;
 }
 
-.ss-go-top.link-is-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-
-.ss-go-top:hover {
-    background: #ff6a00;
-}
 .ss-go-top a {
     display: flex;
     align-items: center;
@@ -4710,5 +4679,3 @@ td:last-child {
         right: -2rem;
     }
 }
-
-

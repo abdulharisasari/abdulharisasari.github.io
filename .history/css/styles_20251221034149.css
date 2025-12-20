@@ -3147,6 +3147,10 @@ td:last-child {
     margin-left: var(--vspace-1);
 }
 
+.target-section {
+    scroll-margin-top: 100px; /* ⬅️ sesuaikan tinggi header */
+}
+
 
 .s-header__menu-links {
     list-style: none;

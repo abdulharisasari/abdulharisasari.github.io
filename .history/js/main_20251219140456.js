@@ -234,7 +234,7 @@
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
 
-        const pxShow = 200;
+        const pxShow = 900;
         const goTopButton = document.querySelector(".ss-go-top");
 
         if (!goTopButton) return;
@@ -267,18 +267,22 @@
     let roleIndex = 0;
     let charIndex = 0;
 
-    const typingSpeed = 80;    
-    const holdAfterType = 1500;
+    const typingSpeed = 80;    // kecepatan ngetik
+    const holdAfterType = 1500; // jeda setelah selesai ngetik
+
     function typeOnly() {
         const currentRole = roles[roleIndex];
 
+        // Ketik karakter satu-satu
         roleEl.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex < currentRole.length) {
             setTimeout(typeOnly, typingSpeed);
         } else {
+            // Setelah selesai ngetik
             setTimeout(() => {
+                // HAPUS LANGSUNG (tanpa animasi)
                 roleEl.textContent = "";
                 charIndex = 0;
                 roleIndex = (roleIndex + 1) % roles.length;
@@ -356,64 +360,22 @@
             });
         });
       };
-   
-const ssPortfolioModal = function () {
+      
+   const ssPortfolioModal = function () {
     const modal = document.getElementById("folioModal");
+    const modalImg = document.getElementById("modalImg");
     const modalTitle = document.getElementById("modalTitle");
     const modalDesc = document.getElementById("modalDesc");
-    const modalTech = document.getElementById("modalTech");
-    const modalStore = document.getElementById("modalStore");
     const closeBtn = document.querySelector(".close");
 
-    if (!(modal && modalTitle && modalDesc && modalTech && modalStore && closeBtn)) return;
+    if (!(modal && modalImg && modalTitle && modalDesc && closeBtn)) return;
 
     document.querySelectorAll(".folio-entry").forEach(entry => {
         entry.addEventListener("click", () => {
-
-            document.querySelectorAll(".folio-entry")
-                .forEach(el => el.classList.remove("selected"));
-
-            entry.classList.add("selected");
-
-            modalTitle.textContent = entry.dataset.title || "";
-            modalDesc.textContent = entry.dataset.desc || "";
-
-            /* TECH STACK */
-            modalTech.innerHTML = "";
-            if (entry.dataset.tech) {
-                entry.dataset.tech.split("·").forEach(t => {
-                    const span = document.createElement("span");
-                    span.textContent = t.trim();
-                    modalTech.appendChild(span);
-                });
-            }
-
-            /* STORE BADGES */
-            modalStore.innerHTML = "";
-
-            if (entry.dataset.playstore) {
-                modalStore.innerHTML += `
-                    <a href="${entry.dataset.playstore}"
-                       target="_blank"
-                       class="store-badge">
-                        <img src="images/icons/icon-playstore.png"
-                             alt="Get it on Google Play">
-                    </a>
-                `;
-            }
-
-            if (entry.dataset.appstore) {
-                modalStore.innerHTML += `
-                    <a href="${entry.dataset.appstore}"
-                       target="_blank"
-                       class="store-badge">
-                        <img src="images/icons/icon-appstore.png"
-                             alt="Download on the App Store">
-                    </a>
-                `;
-            }
-
             modal.style.display = "block";
+            modalImg.src = entry.getAttribute("data-img");
+            modalTitle.textContent = entry.getAttribute("data-title");
+            modalDesc.textContent = entry.getAttribute("data-desc"); // ← deskripsi masuk ke sini
         });
     });
 
@@ -428,7 +390,6 @@ const ssPortfolioModal = function () {
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
-        ssBackToTop();
 
         ssPreloader();
         ssMoveHeader();
