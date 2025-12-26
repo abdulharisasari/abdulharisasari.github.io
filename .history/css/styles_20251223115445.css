@@ -4218,12 +4218,6 @@ td:last-child {
     .modal-content {
         max-width: 900px;
     }
-    .modal-content.text-only {
-    width: 45%;
-    max-width: 900px;
-    text-align: left;
-    }
-
 }
 
 @media (max-width: 480px) {

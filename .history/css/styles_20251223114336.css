@@ -4081,7 +4081,10 @@ td:last-child {
     transform: scale(1.05);
 }
 
-
+.modal-content.text-only {
+  width: 45%;
+  text-align: left;
+}
 
 .tech-stack {
   margin: 10px 0 14px;
@@ -4140,12 +4143,6 @@ td:last-child {
     transition: padding 0.3s ease;
 }
 
-.modal-content.text-only {
-  width: 92%;
-  max-width: 900px;
-  text-align: left;
-}
-
 .modal {
   display: none; 
   position: fixed;
@@ -4160,8 +4157,7 @@ td:last-child {
 .modal-content {
     background: #fff;
     margin: auto;
-
-    padding: 24px 16px; /* ⬅️ atas-bawah | kiri-kanan */
+    padding: 24px;
 
     width: 92%;
     max-width: 900px;
@@ -4170,7 +4166,6 @@ td:last-child {
     overflow-y: auto;
     border-radius: 6px;
 }
-
 
 .modal-desc {
     line-height: 1.6;
@@ -4196,14 +4191,6 @@ td:last-child {
     word-break: normal;
 }
 
-@media (max-width: 480px) {
-    .modal-content {
-        width: 96%;
-        max-width: none;
-        padding: 20px 14px;
-        border-radius: 8px;
-    }
-}
 
 
 /* Tablet */
@@ -4218,12 +4205,6 @@ td:last-child {
     .modal-content {
         max-width: 900px;
     }
-    .modal-content.text-only {
-    width: 45%;
-    max-width: 900px;
-    text-align: left;
-    }
-
 }
 
 @media (max-width: 480px) {
@@ -4233,12 +4214,15 @@ td:last-child {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     #modalDesc {
-        font-size: 14px;
-        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
+
 
 
 

@@ -4081,7 +4081,10 @@ td:last-child {
     transform: scale(1.05);
 }
 
-
+.modal-content.text-only {
+  width: 45%;
+  text-align: left;
+}
 
 .tech-stack {
   margin: 10px 0 14px;
@@ -4140,12 +4143,6 @@ td:last-child {
     transition: padding 0.3s ease;
 }
 
-.modal-content.text-only {
-  width: 92%;
-  max-width: 900px;
-  text-align: left;
-}
-
 .modal {
   display: none; 
   position: fixed;
@@ -4160,49 +4157,19 @@ td:last-child {
 .modal-content {
     background: #fff;
     margin: auto;
-
-    padding: 24px 16px; /* ⬅️ atas-bawah | kiri-kanan */
+    padding: 24px;
 
     width: 92%;
-    max-width: 900px;
+    max-width: 420px;
     max-height: 90vh;
 
     overflow-y: auto;
     border-radius: 6px;
 }
 
-
 .modal-desc {
     line-height: 1.6;
     font-size: 15px;
-}
-
-#modalTitle {
-    font-size: clamp(20px, 3vw, 32px);
-    line-height: 1.25;
-    margin-bottom: 12px;
-    max-width: 100%;
-    word-break: normal;
-    white-space: normal;
-}
-
-#modalDesc {
-    font-size: clamp(14px, 1.2vw, 16px);
-    line-height: 1.65;
-    color: #333;
-    margin-bottom: 16px;
-    max-width: 100%;
-    white-space: normal;
-    word-break: normal;
-}
-
-@media (max-width: 480px) {
-    .modal-content {
-        width: 96%;
-        max-width: none;
-        padding: 20px 14px;
-        border-radius: 8px;
-    }
 }
 
 
@@ -4217,26 +4184,6 @@ td:last-child {
 @media (min-width: 1200px) {
     .modal-content {
         max-width: 900px;
-    }
-    .modal-content.text-only {
-    width: 45%;
-    max-width: 900px;
-    text-align: left;
-    }
-
-}
-
-@media (max-width: 480px) {
-    #modalTitle {
-        font-size: 20px;
-        line-height: 1.3;
-    }
-}
-
-@media (max-width: 480px) {
-    #modalDesc {
-        font-size: 14px;
-        line-height: 1.6;
     }
 }
 
